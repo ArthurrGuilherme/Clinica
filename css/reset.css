@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz com que padding não some à largura dos elementos */
+}
+:root {
+    --primary-color: #5d4954;       /* Cor primária (roxo escuro) */
+    --secondary-color: #9a7b7b;     /* Cor secundária (rosa acinzentado) */
+    --accent-color: #c8a797;        /* Cor de destaque (bege rosado) */
+    --light-color: #f5f0e8;         /* Cor clara de fundo (bege claro) */
+    --dark-color: #3a2e32;          /* Cor escura para textos */
+    --text-color: #333333;          /* Cor principal para textos */
+    --text-light: #777777;          /* Cor clara para textos secundários */
+}
+body {
+    font-family: 'Raleway', sans-serif; /* Define a fonte principal */
+    color: var(--text-color);           /* Cor do texto */
+    line-height: 1.6;                   /* Espaçamento entre linhas */
+    background-color: var(--light-color);/* Cor de fundo */
+    overflow-x: hidden;                 /* Esconde rolagem horizontal */
+}
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif; /* Fonte diferente para títulos */
+    font-weight: 600;                      /* Peso da fonte (negrito) */
+    color: var(--dark-color);              /* Cor dos títulos */
+}

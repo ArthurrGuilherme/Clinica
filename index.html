@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Pagina op para trafeco pago">
+        <title>Clínica Eloah Estética - Beleza e Bem-Estar Personalizado</title>
+    <!--Css-->    
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <!--Css Apis-->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <!--Css Apis-->
+    <!--Css-->
+    <!-- Carrega fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Carrega ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Container principal - centraliza o conteúdo */
+        .container {
+            width: 90%;
+            max-width: 1200px;  /* Largura máxima do conteúdo */
+            margin: 0 auto;     /* Centraliza na página */
+            padding: 0 20px;    /* Espaçamento interno */
+        }
+        
+        /* 
+        CABEÇALHO DA PÁGINA 
+        Contém o logo e o menu de navegação
+        */
+        
+        /* 
+        SEÇÃO HERO (BANNER PRINCIPAL)
+        A grande imagem de abertura com texto e botões
+        */
+        .hero {
+            height: 100vh;                      /* Altura total da tela */
+            background: linear-gradient(rgba(61, 47, 52, 0.7), rgba(61, 47, 52, 0.7)), 
+                        url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') 
+                        no-repeat center center/cover; /* Imagem de fundo com overlay escuro */
+            color: white;
+            display: flex;
+            align-items: center;  /* Centraliza verticalmente */
+            text-align: center;   /* Centraliza horizontalmente */
+            padding-top: 80px;    /* Compensa o cabeçalho fixo */
+        }
+        
+        /* Container do conteúdo do hero */
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;  /* Centraliza */
+        }
+        
+        /* Título principal */
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        /* Texto descritivo */
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-family: 'Merriweather', serif;
+        }
+        
+        /* Estilo dos botões */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;  /* Bordas arredondadas */
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;  /* Efeito de transição */
+            border: 2px solid var(--accent-color);
+        }
+        
+        /* Efeito ao passar o mouse */
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+        
+        /* Estilo do botão secundário */
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        /* 
+        ESTILOS COMUNS PARA SEÇÕES 
+        */
+        .section {
+            padding: 100px 0;  /* Espaçamento entre seções */
+        }
+        
+        /* Estilo do título das seções */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        /* Linha decorativa abaixo do título */
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);  /* Centraliza */
+        }
+        
+        /* 
+        SEÇÃO SOBRE 
+        */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;  /* Espaço entre texto e imagem */
+        }
+        
+        .about-text {
+            flex: 1;  /* Ocupa metade do espaço */
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .about-image {
+            flex: 1;  /* Ocupa metade do espaço */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;  /* Efeito de zoom suave */
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);  /* Aumenta ligeiramente ao passar o mouse */
+        }
+        
+        /* 
+        SEÇÃO DE SERVIÇOS 
+        */
+        .services {
+            background-color: white;  /* Fundo branco para destacar */
+        }
+        
+        /* Grade de serviços - layout responsivo */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Ajusta automaticamente o número de colunas */
+            gap: 30px;  /* Espaço entre cards */
+        }
+        
+        /* Cartão de serviço individual */
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;  /* Efeitos de hover */
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);  /* Levanta ligeiramente */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Garante que a imagem cubra todo o espaço */
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);  /* Zoom na imagem ao passar o mouse */
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        /* Estilo do preço */
+        .service-price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        /* 
+        SEÇÃO DE PROMOÇÕES 
+        */
+        .promotions {
+            background: linear-gradient(rgba(93, 73, 84, 0.9), rgba(93, 73, 84, 0.9)), 
+                        url('https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') 
+                        no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        /* Ajustes para títulos na seção de promoções */
+        .promotions .section-title h2 {
+            color: white;
+        }
+        
+        .promotions .section-title h2::after {
+            background: var(--accent-color);
+        }
+        
+        /* Cartão de promoção */
+        .promo-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .promo-card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .promo-card p {
+            color: var(--text-color);
+            margin-bottom: 30px;
+        }
+        
+        /* Destaque do preço promocional */
+        .promo-highlight {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 20px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Contador regressivo */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .countdown-item {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .countdown-item span {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+        
+        /* 
+        SEÇÃO DE DEPOIMENTOS 
+        */
+        .testimonials {
+            background-color: var(--light-color);
+        }
+        
+        /* Grade de depoimentos */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Cartão de depoimento individual */
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            position: relative;
+        }
+        
+        /* Aspas decorativas */
+        .testimonial-text::before {
+            content: '"';
+            font-size: 60px;
+            color: var(--accent-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-family: Georgia, serif;
+        }
+        
+        /* Informações do autor do depoimento */
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;  /* Imagem redonda */
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* 
+        SEÇÃO DE TRANSFORMAÇÕES (ANTES/DEPOIS) 
+        */
+        .transformations {
+            background-color: white;
+        }
+        
+        /* Galeria de imagens */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Overlay com informações que aparece ao passar o mouse */
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-overlay p {
+            font-size: 14px;
+        }
+        
+        /* 
+        SEÇÃO DE CONTATO 
+        */
+        .contact {
+            background-color: var(--light-color);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        /* Informações de contato */
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            color: var(--accent-color);
+            font-size: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .contact-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Links sociais */
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Formulário de contato */
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Raleway', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* 
+        RODAPÉ 
+        */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .footer-col p, .footer-col a {
+            color: #b3b3b3;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b3b3b3;
+            font-size: 14px;
+        }
+        
+        /* 
+        BOTÃO FLUTUANTE DO WHATSAPP 
+        */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;  /* Verde do WhatsApp */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;  /* Efeito de pulsação */
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Animação de pulsação */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* 
+        FORMULÁRIO FLUTUANTE PARA CAPTURA DE LEADS 
+        */
+        .lead-capture {
+            position: fixed;
+            bottom: -300px;  /* Começa escondido */
+            right: 30px;
+            width: 350px;
+            background-color: white;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+            transition: bottom 0.5s ease;
+        }
+        
+        /* Quando ativo, sobe para ficar visível */
+        .lead-capture.active {
+            bottom: 0;
+        }
+        
+        .lead-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .lead-header h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            color: white;
+        }
+        
+        .lead-header i {
+            transition: transform 0.3s;
+        }
+        
+        .lead-header.active i {
+            transform: rotate(180deg);  /* Gira o ícone quando aberto */
+        }
+        
+        .lead-body {
+            padding: 20px;
+        }
+        
+        .lead-body p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        /* 
+        ESTILOS RESPONSIVOS - AJUSTES PARA DIFERENTES TAMANHOS DE TELA 
+        */
+        @media (max-width: 992px) {
+            /* Em telas médias, muda para layout de coluna */
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            /* Coloca a imagem acima do texto */
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Ajustes para tablets e celulares grandes */
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            /* Botões em blocos (um abaixo do outro) */
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+            
+            /* Menu mobile */
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;  /* Esconde o menu */
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: left 0.3s;
+            }
+            
+            nav ul.active {
+                left: 0;  /* Mostra o menu */
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            /* Mostra o botão do menu mobile */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            /* Ajusta o formulário flutuante */
+            .lead-capture {
+                width: 300px;
+                right: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            /* Ajustes para celulares pequenos */
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .promo-card {
+                padding: 30px 20px;
+            }
+            
+            .promo-highlight {
+                font-size: 32px;
+            }
+            
+            /* Contador regressivo em várias linhas se necessário */
+            .countdown {
+                flex-wrap: wrap;
+            }
+            
+            /* Formulário flutuante ocupa toda a largura */
+            .lead-capture {
+                width: calc(100% - 30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    CABEÇALHO DA PÁGINA 
+    Contém o logo e o menu de navegação principal
+    -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Eloah<span>Estética</span></a>
+            <!-- Botão do menu mobile (visível apenas em telas pequenas) -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#promotions">Promoções</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 
+    SEÇÃO HERO (BANNER PRINCIPAL)
+    Primeira seção visualizada ao entrar no site
+    -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Beleza que transforma, cuidado que encanta</h1>
+                <p>Na Clínica Eloah Estética, sua jornada de autocuidado é personalizada com tratamentos exclusivos para realçar sua beleza natural.</p>
+                <div class="hero-buttons">
+                    <a href="#promotions" class="btn">Conheça nossas promoções</a>
+                    <a href="#contact" class="btn btn-secondary">Agende sua avaliação</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    SEÇÃO SOBRE 
+    Apresenta a clínica e sua história
+    -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Minha História</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Eloah Estética - Cuidado Personalizado</h3>
+                    <p>Fundada com a missão de proporcionar tratamentos estéticos de alta qualidade, a Clínica Eloah Estética nasceu da paixão por ajudar pessoas a se sentirem bem em sua própria pele.</p>
+                    <p>Com anos de experiência no mercado, desenvolvemos a metodologia MAPE - uma abordagem única que avalia cada detalhe do seu corpo para criar um plano de tratamento personalizado, combinando técnicas avançadas como drenagem linfática, eletroterapia, argilas terapêuticas e radiofrequência.</p>
+                    <p>Nosso compromisso vai além dos procedimentos. Orientamos sobre cuidados diários com alimentação, hidratação e atividades físicas para resultados duradouros e uma vida mais saudável.</p>
+                    <a href="#services" class="btn">Conheça nossos tratamentos</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Eloah Estética">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    SEÇÃO DE SERVIÇOS 
+    Lista todos os tratamentos oferecidos
+    -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Tratamentos</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Tratamento 1: Drenagem MAPE -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Drenagem MAPE">
+                    </div>
+                    <div class="service-content">
+                        <h3>Drenagem MAPE</h3>
+                        <p>Técnica exclusiva que combina massagem modeladora e drenagem linfática para reduzir medidas e melhorar a circulação.</p>
+                        <div class="service-price">
+                            <p>1 sessão: R$ 250,00</p>
+                            <p>Pacote 6 sessões: R$ 1.200,00</p>
+                            <p>Pacote 12 sessões: R$ 1.800,00</p>
+                        </div>
+                        <a href="#contact" class="btn">Agendar agora</a>
+                    </div>
+                </div>
+
+                <!-- Tratamento 2: MAPE com Enzima -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="MAPE com Enzima">
+                    </div>
+                    <div class="service-content">
+                        <h3>MAPE com Enzima</h3>
+                        <p>Metodologia MAPE potencializada com aplicação de enzimas para tratamento de gordura localizada e celulite.</p>
+                        <div class="service-price">
+                            <p>1 sessão: R$ 350,00</p>
+                            <p>Pacote 8 sessões: R$ 2.200,00</p>
+                            <p>Pacote 12 sessões: R$ 2.500,00</p>
+                        </div>
+                        <a href="#contact" class="btn">Agendar agora</a>
+                    </div>
+                </div>
+
+                <!-- Tratamento 3: Glúteo Max -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Glúteo Max">
+                    </div>
+                    <div class="service-content">
+                        <h3>Glúteo Max</h3>
+                        <p>Tratamento completo para modelar, levantar e aumentar o volume dos glúteos com técnicas avançadas.</p>
+                        <div class="service-price">
+                            <p>Pacote 8 sessões: R$ 2.500,00</p>
+                        </div>
+                        <a href="#contact" class="btn">Agendar agora</a>
+                    </div>
+                </div>
+
+                <!-- Tratamento 4: Limpeza de Pele -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Limpeza de Pele">
+                    </div>
+                    <div class="service-content">
+                        <h3>Limpeza de Pele Profissional</h3>
+                        <p>Remoção de cravos e impurezas, com hidratação e tratamento pós-limpeza para pele renovada.</p>
+                        <div class="service-price">
+                            <p>1 sessão: R$ 180,00</p>
+                            <p>Com peeling: R$ 220,00</p>
+                        </div>
+                        <a href="#contact" class="btn">Agendar agora</a>
+                    </div>
+                </div>
+
+                <!-- Tratamento 5: Pele de Ryca -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Pele de Ryca">
+                    </div>
+                    <div class="service-content">
+                        <h3>Pele de Ryca</h3>
+                        <p>Tratamento facial completo para pele de pêssego, com renovação celular e hidratação intensiva.</p>
+                        <div class="service-price">
+                            <p>1 sessão: R$ 350,00</p>
+                            <p>Pacote 5 sessões: R$ 1.500,00</p>
+                        </div>
+                        <a href="#contact" class="btn">Agendar agora</a>
+                    </div>
+                </div>
+
+                <!-- Tratamento 6: Drenagem Facial -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Drenagem Facial">
+                    </div>
+                    <div class="service-content">
+                        <h3>Drenagem MAPE Facial</h3>
+                        <p>Técnica especializada para desinchar o rosto, melhorar a oxigenação e promover rejuvenescimento.</p>
+                        <div class="service-price">
+                            <p>1 sessão: R$ 150,00</p>
+                        </div>
+                        <a href="#contact" class="btn">Agendar agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    SEÇÃO DE PROMOÇÕES 
+    Destaque para ofertas especiais
+    -->
+    <section class="section promotions" id="promotions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Promoções Exclusivas</h2>
+            </div>
+            <div class="promo-card">
+                <h3>Pacote Glow Total</h3>
+                <p>Transforme sua pele e corpo com nosso combo completo por tempo limitado!</p>
+                <div class="promo-highlight">
+                    <span id="promoPrice">R$ 3.200,00</span>
+                </div>
+                <p>Economize R$ 800,00 no pacote que inclui:</p>
+                <ul style="text-align: left; margin-bottom: 20px; color: var(--text-color);">
+                    <li>8 sessões de MAPE com Enzima (valor normal: R$ 2.200,00)</li>
+                    <li>5 sessões de Pele de Ryca (valor normal: R$ 1.500,00)</li>
+                    <li>Consulta Estética Completa (valor normal: R$ 150,00)</li>
+                    <li>1 sessão de Spa dos Pés com Ofurô (valor normal: R$ 110,00)</li>
+                </ul>
+                <p>Oferta válida até:</p>
+                <div class="countdown" id="countdown">
+                    <!-- Contador regressivo será preenchido pelo JavaScript -->
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <span>Dias</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span>Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span>Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span>Segundos</span>
+                    </div>
+                </div>
+                <p style="font-style: italic; margin-top: 20px;">Vagas limitadas! Aproveite esta oportunidade única.</p>
+                <a href="#contact" class="btn">Quero meu Glow Total</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    SEÇÃO DE DEPOIMENTOS 
+    Mostra feedbacks de clientes reais
+    -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Depoimentos</h2>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Depois de 12 sessões de MAPE na Clínica Eloah, perdi 8cm de cintura e minha celulite melhorou significativamente. A equipe é maravilhosa e os resultados superaram minhas expectativas!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana Carolina">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Carolina</h4>
+                            <p>Paciente há 1 ano</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>O tratamento Glúteo Max mudou minha autoestima! Em 8 sessões consegui um levantamento incrível e um volume natural que sempre sonhei. Recomendo a todas que querem resultados reais.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Juliana Santos">
+                        </div>
+                        <div class="author-info">
+                            <h4>Juliana Santos</h4>
+                            <p>Paciente há 6 meses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Minha pele nunca esteve tão bonita! O tratamento Pele de Ryca me deixou com uma textura aveludada e sem aquelas manchinhas que me incomodavam há anos. Valeu cada sessão!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fernanda Oliveira">
+                        </div>
+                        <div class="author-info">
+                            <h4>Fernanda Oliveira</h4>
+                            <p>Paciente há 8 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    SEÇÃO DE TRANSFORMAÇÕES 
+    Mostra resultados antes/depois
+    -->
+    <section class="section transformations" id="transformations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transformações Reais</h2>
+            </div>
+            <div class="gallery">
+                <!-- Imagem 1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Antes e Depois 1">
+                    <div class="gallery-overlay">
+                        <h4>Redução de Medidas</h4>
+                        <p>12 sessões de MAPE + orientação nutricional</p>
+                    </div>
+                </div>
+                <!-- Imagem 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Antes e Depois 2">
+                    <div class="gallery-overlay">
+                        <h4>Rejuvenescimento Facial</h4>
+                        <p>Pacote Pele de Ryca + Drenagem Facial</p>
+                    </div>
+                </div>
+                <!-- Imagem 3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Antes e Depois 3">
+                    <div class="gallery-overlay">
+                        <h4>Modelagem Corporal</h4>
+                        <p>8 sessões de Glúteo Max + MAPE</p>
+                    </div>
+                </div>
+                <!-- Imagem 4 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Antes e Depois 4">
+                    <div class="gallery-overlay">
+                        <h4>Tratamento de Flacidez</h4>
+                        <p>MAPE Flacidez + Radiofrequência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    SEÇÃO DE CONTATO 
+    Formulário e informações para agendamento
+    -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Agende sua Avaliação</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Entre em Contato</h3>
+                    <div class="contact-details">
+                        <!-- Informação 1: Endereço -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Endereço</h4>
+                                <p>Rua Exemplo, 123 - Centro, Cidade/SP</p>
+                            </div>
+                        </div>
+                        <!-- Informação 2: Telefone -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Telefone</h4>
+                                <a href="tel:+5519991926179">(19) 99192-6179</a>
+                            </div>
+                        </div>
+                        <!-- Informação 3: Email -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:contato@eloahestetica.com.br">contato@eloahestetica.com.br</a>
+                            </div>
+                        </div>
+                        <!-- Informação 4: Horário -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Horário de Funcionamento</h4>
+                                <p>Segunda a Sexta: 9h às 19h</p>
+                                <p>Sábado: 9h às 14h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 style="margin-top: 30px;">Siga-nos</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <!-- Formulário de contato -->
+                <div class="contact-form">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Serviço de Interesse</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Selecione um serviço</option>
+                                <option value="Drenagem MAPE">Drenagem MAPE</option>
+                                <option value="MAPE com Enzima">MAPE com Enzima</option>
+                                <option value="Glúteo Max">Glúteo Max</option>
+                                <option value="Limpeza de Pele">Limpeza de Pele</option>
+                                <option value="Pele de Ryca">Pele de Ryca</option>
+                                <option value="Consulta Estética">Consulta Estética</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem (Opcional)</label>
+                            <textarea id="message" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Agendar Avaliação</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    RODAPÉ 
+    Informações adicionais e links
+    -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <!-- Coluna 1: Sobre -->
+                <div class="footer-col">
+                    <h3>Eloah Estética</h3>
+                    <p>Sua jornada de autocuidado e beleza começa aqui. Tratamentos personalizados para realçar sua beleza natural.</p>
+                </div>
+                <!-- Coluna 2: Serviços -->
+                <div class="footer-col">
+                    <h3>Serviços</h3>
+                    <a href="#">Tratamentos Corporais</a>
+                    <a href="#">Tratamentos Faciais</a>
+                    <a href="#">Pacotes Promocionais</a>
+                    <a href="#">Consultoria Estética</a>
+                </div>
+                <!-- Coluna 3: Links Úteis -->
+                <div class="footer-col">
+                    <h3>Links Úteis</h3>
+                    <a href="#">Sobre Nós</a>
+                    <a href="#">Depoimentos</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+                <!-- Coluna 4: Newsletter -->
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Assine nossa newsletter para receber promoções e dicas de beleza.</p>
+                    <form id="newsletterForm">
+                        <div class="form-group" style="margin-bottom: 10px;">
+                            <input type="email" placeholder="Seu email" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; padding: 10px;">Assinar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Clínica Eloah Estética. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+    BOTÃO FLUTUANTE DO WHATSAPP 
+    Permite contato rápido via WhatsApp
+    -->
+    <a href="https://wa.me/5519991926179" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- 
+    FORMULÁRIO FLUTUANTE PARA CAPTURA DE LEADS 
+    Aparece após alguns segundos para capturar informações de visitantes
+    -->
+    <div class="lead-capture" id="leadCapture">
+        <div class="lead-header" id="leadHeader">
+            <h4>Ganhe 10% de desconto!</h4>
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        <div class="lead-body" id="leadBody">
+            <p>Cadastre-se agora e receba um cupom de 10% de desconto no seu primeiro tratamento!</p>
+            <form id="leadForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Seu nome" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Seu email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Seu telefone" class="form-control" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Quero meu desconto</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 
+    MODAL DE PAGAMENTO (INVISÍVEL INICIALMENTE)
+    Será mostrado quando o usuário quiser realizar um pagamento
+    -->
+    <div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 30px; border-radius: 10px; max-width: 500px; width: 90%;">
+            <h3 style="margin-bottom: 20px; color: var(--primary-color);">Finalizar Compra</h3>
+            <div id="paymentDetails" style="margin-bottom: 20px;">
+                <!-- Aqui serão inseridos os detalhes do serviço selecionado -->
+            </div>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label>Forma de Pagamento</label>
+                    <select id="paymentMethod" class="form-control" required>
+                        <option value="">Selecione...</option>
+                        <option value="pix">PIX</option>
+                        <option value="credit">Cartão de Crédito</option>
+                        <option value="debit">Cartão de Débito</option>
+                        <option value="transfer">Transferência Bancária</option>
+                    </select>
+                </div>
+                
+                <!-- Campos para cartão de crédito (aparecem apenas quando selecionado) -->
+                <div id="creditCardFields" style="display: none;">
+                    <div class="form-group">
+                        <label>Número do Cartão</label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-group">
+                        <label>Nome no Cartão</label>
+                        <input type="text" class="form-control" id="cardName" placeholder="Nome como no cartão">
+                    </div>
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Validade</label>
+                            <input type="text" class="form-control" id="cardExpiry" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>CVV</label>
+                            <input type="text" class="form-control" id="cardCvv" placeholder="123">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Parcelamento</label>
+                        <select id="installments" class="form-control">
+                            <option value="1">1x sem juros</option>
+                            <option value="2">2x sem juros</option>
+                            <option value="3">3x sem juros</option>
+                            <option value="4">4x sem juros</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Instruções para PIX -->
+                <div id="pixInstructions" style="display: none; margin-bottom: 20px;">
+                    <p>Você será redirecionado para realizar o pagamento via PIX.</p>
+                    <p>Após a confirmação, enviaremos o comprovante por email.</p>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%; margin-top: 15px;">Finalizar Pagamento</button>
+            </form>
+            <button onclick="closePaymentModal()" class="btn btn-secondary" style="width: 100%; margin-top: 10px;">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        // 
+        // FUNÇÕES JAVASCRIPT DA PÁGINA
+        // Aqui estão todas as interações e comportamentos dinâmicos
+        // 
+
+        // 1. TOGGLE DO MENU MOBILE
+        // Controla a abertura/fechamento do menu em dispositivos pequenos
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('active');
+            // Muda o ícone do botão (hamburguer para X e vice-versa)
+            mobileMenuBtn.innerHTML = mainMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // 2. ROLAGEM SUAVE PARA LINKS ANCORA
+        // Faz a página rolar suavemente quando clica em links do menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Evita o comportamento padrão
+                
+                // Se for link vazio, não faz nada
+                if (this.getAttribute('href') === '#') return;
+                
+                // Encontra o elemento alvo
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Rola até o elemento, considerando o cabeçalho fixo
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth' // Rolagem suave
+                    });
+                    
+                    // Fecha o menu mobile se estiver aberto
+                    if (mainMenu.classList.contains('active')) {
+                        mainMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // 3. CONTADOR REGRESSIVO PARA PROMOÇÃO
+        // Mostra o tempo restante para o fim da promoção
+        function updateCountdown() {
+            // Define a data final da promoção (7 dias a partir de agora)
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 7);
+            
+            // Calcula a diferença entre agora e a data final
+            const now = new Date().getTime();
+            const distance = endDate - now;
+            
+            // Calcula dias, horas, minutos e segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Atualiza os elementos na página
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            // Se a promoção acabou, mostra mensagem
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item">Promoção encerrada!</div>';
+                document.getElementById('promoPrice').textContent = 'Promoção encerrada';
+            }
+        }
+        
+        // Inicia o contador e atualiza a cada segundo
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Chama imediatamente para evitar delay
+        
+        // 4. TOGGLE DO FORMULÁRIO FLUTUANTE DE LEAD
+        // Controla a abertura/fechamento do formulário de captura
+        const leadHeader = document.getElementById('leadHeader');
+        const leadCapture = document.getElementById('leadCapture');
+        
+        leadHeader.addEventListener('click', () => {
+            leadCapture.classList.toggle('active');
+            leadHeader.classList.toggle('active');
+        });
+        
+        // Mostra o formulário após 5 segundos
+        setTimeout(() => {
+            leadCapture.classList.add('active');
+        }, 5000);
+        
+        // 5. SUBMISSÃO DE FORMULÁRIOS
+        // Formulário de agendamento
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Sua solicitação de agendamento foi enviada com sucesso! Entraremos em contato em breve para confirmar.');
+            this.reset();
+        });
+        
+        // Formulário de lead (desconto)
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado por se cadastrar! Um cupom de 10% de desconto foi enviado para seu email.');
+            this.reset();
+            leadCapture.classList.remove('active'); // Fecha o formulário
+        });
+        
+        // Formulário de newsletter
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado por assinar nossa newsletter!');
+            this.reset();
+        });
+        
+        // 6. RASTREAMENTO DE VISITANTES
+        // Identifica novos visitantes (poderia ser integrado com Google Analytics)
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('eloah_visitor')) {
+                localStorage.setItem('eloah_visitor', 'true');
+                console.log('Novo visitante identificado');
+                // Aqui você poderia enviar para um sistema de analytics
+            }
+        });
+        
+        // 7. FUNÇÕES PARA PAGAMENTO (NOVAS)
+        
+        // Array com os serviços e preços
+        const services = {
+            "Drenagem MAPE": {
+                "1 sessão": 250.00,
+                "Pacote 6 sessões": 1200.00,
+                "Pacote 12 sessões": 1800.00
+            },
+            "MAPE com Enzima": {
+                "1 sessão": 350.00,
+                "Pacote 8 sessões": 2200.00,
+                "Pacote 12 sessões": 2500.00
+            },
+            "Glúteo Max": {
+                "Pacote 8 sessões": 2500.00
+            },
+            "Limpeza de Pele": {
+                "1 sessão": 180.00,
+                "Com peeling": 220.00
+            },
+            "Pele de Ryca": {
+                "1 sessão": 350.00,
+                "Pacote 5 sessões": 1500.00
+            },
+            "Drenagem MAPE Facial": {
+                "1 sessão": 150.00
+            },
+            "Pacote Glow Total": {
+                "Promocional": 3200.00
+            }
+        };
+        
+        // Função para abrir o modal de pagamento
+        function openPaymentModal(serviceName, option) {
+            const modal = document.getElementById('paymentModal');
+            const paymentDetails = document.getElementById('paymentDetails');
+            
+            // Preenche os detalhes do serviço selecionado
+            paymentDetails.innerHTML = `
+                <h4>${serviceName} - ${option}</h4>
+                <p>Valor: R$ ${services[serviceName][option].toFixed(2).replace('.', ',')}</p>
+            `;
+            
+            // Mostra o modal
+            modal.style.display = 'flex';
+            
+            // Armazena os dados da compra para uso posterior
+            modal.dataset.service = serviceName;
+            modal.dataset.option = option;
+            modal.dataset.price = services[serviceName][option];
+        }
+        
+        // Função para fechar o modal de pagamento
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+        
+        // Mostra/oculta campos específicos conforme método de pagamento
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            const method = this.value;
+            document.getElementById('creditCardFields').style.display = method === 'credit' ? 'block' : 'none';
+            document.getElementById('pixInstructions').style.display = method === 'pix' ? 'block' : 'none';
+        });
+        
+        // Processa o pagamento quando o formulário é enviado
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const modal = document.getElementById('paymentModal');
+            const method = document.getElementById('paymentMethod').value;
+            const serviceName = modal.dataset.service;
+            const option = modal.dataset.option;
+            const price = modal.dataset.price;
+            
+            // Validação básica
+            if (!method) {
+                alert('Selecione uma forma de pagamento');
+                return;
+            }
+            
+            if (method === 'credit') {
+                // Validação simplificada dos dados do cartão
+                const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
+                const cardName = document.getElementById('cardName').value.trim();
+                const cardExpiry = document.getElementById('cardExpiry').value;
+                const cardCvv = document.getElementById('cardCvv').value;
+                
+                if (!cardNumber || cardNumber.length < 16 || !/^\d+$/.test(cardNumber)) {
+                    alert('Número do cartão inválido');
+                    return;
+                }
+                
+                if (!cardName) {
+                    alert('Informe o nome no cartão');
+                    return;
+                }
+                
+                if (!cardExpiry || !/^\d{2}\/\d{2}$/.test(cardExpiry)) {
+                    alert('Data de validade inválida (use MM/AA)');
+                    return;
+                }
+                
+                if (!cardCvv || cardCvv.length < 3 || !/^\d+$/.test(cardCvv)) {
+                    alert('CVV inválido');
+                    return;
+                }
+            }
+            
+            // Simulação de processamento de pagamento
+            alert(`Pagamento de R$ ${parseFloat(price).toFixed(2).replace('.', ',')} para ${serviceName} (${option}) via ${getPaymentMethodName(method)} processado com sucesso!`);
+            
+            // Fecha o modal e limpa o formulário
+            closePaymentModal();
+            this.reset();
+        });
+        
+        // Retorna o nome completo do método de pagamento
+        function getPaymentMethodName(method) {
+            const methods = {
+                'pix': 'PIX',
+                'credit': 'Cartão de Crédito',
+                'debit': 'Cartão de Débito',
+                'transfer': 'Transferência Bancária'
+            };
+            return methods[method] || method;
+        }
+        
+        // 8. ADICIONA BOTÕES DE PAGAMENTO AOS SERVIÇOS
+        // Modifica os botões "Agendar agora" para abrir o modal de pagamento
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach(card => {
+                const serviceName = card.querySelector('h3').textContent;
+                const servicePrice = card.querySelector('.service-price');
+                const btn = card.querySelector('.btn');
+                
+                // Cria um botão de pagamento para cada opção de preço
+                const priceOptions = servicePrice.querySelectorAll('p');
+                
+                // Se houver apenas uma opção de preço
+                if (priceOptions.length === 1) {
+                    const option = priceOptions[0].textContent.split(':')[0].trim();
+                    btn.onclick = function(e) {
+                        e.preventDefault();
+                        openPaymentModal(serviceName, option);
+                    };
+                } 
+                // Se houver múltiplas opções, mostra um menu
+                else {
+                    btn.onclick = function(e) {
+                        e.preventDefault();
+                        
+                        // Cria um menu de opções
+                        let optionsHTML = '<div style="padding: 10px;">';
+                        optionsHTML += '<h4 style="margin-bottom: 15px; color: var(--primary-color);">Selecione a opção:</h4>';
+                        
+                        priceOptions.forEach(option => {
+                            const text = option.textContent.split(':')[0].trim();
+                            optionsHTML += `<button onclick="openPaymentModal('${serviceName}', '${text}')" 
+                                            style="display: block; width: 100%; padding: 10px; margin-bottom: 10px; 
+                                            background: var(--accent-color); color: white; border: none; 
+                                            border-radius: 5px; cursor: pointer;">
+                                            ${option.textContent}
+                                          </button>`;
+                        });
+                        
+                        optionsHTML += '<button onclick="this.parentNode.style.display=\'none\'" style="display: block; width: 100%; padding: 10px; background: #ccc; border: none; border-radius: 5px; cursor: pointer;">Cancelar</button>';
+                        optionsHTML += '</div>';
+                        
+                        // Mostra o menu no lugar do botão
+                        const optionsDiv = document.createElement('div');
+                        optionsDiv.style.position = 'absolute';
+                        optionsDiv.style.background = 'white';
+                        optionsDiv.style.borderRadius = '10px';
+                        optionsDiv.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                        optionsDiv.style.zIndex = '100';
+                        optionsDiv.innerHTML = optionsHTML;
+                        
+                        // Posiciona o menu
+                        const rect = btn.getBoundingClientRect();
+                        optionsDiv.style.top = `${rect.top}px`;
+                        optionsDiv.style.left = `${rect.left}px`;
+                        
+                        document.body.appendChild(optionsDiv);
+                    };
+                }
+            });
+            
+            // Configura o botão de pagamento para o pacote promocional
+            const promoBtn = document.querySelector('.promo-card .btn');
+            if (promoBtn) {
+                promoBtn.onclick = function(e) {
+                    e.preventDefault();
+                    openPaymentModal('Pacote Glow Total', 'Promocional');
+                };
+            }
+        });
+    </script>
+</body>
+    <!--Js-->
+        <!--Js-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        <!--Js-->
+    <!--Js-->
+</html>
