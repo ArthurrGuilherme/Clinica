@@ -16,10 +16,3 @@
     --text-color: #333333;          /* Cor principal para textos */
     --text-light: #777777;          /* Cor clara para textos secundários */
 }
-body {
-    font-family: 'Raleway', sans-serif; /* Define a fonte principal */
-    color: var(--text-color);           /* Cor do texto */
-    line-height: 1.6;                   /* Espaçamento entre linhas */
-    background-color: var(--light-color);/* Cor de fundo */
-    overflow-x: hidden;                 /* Esconde rolagem horizontal */
-}
