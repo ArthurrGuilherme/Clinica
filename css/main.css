@@ -26,7 +26,13 @@
 /*Header*/
 /*Main*/
 #barra {
-    width: 45%;
+    width: 50%;
     border: 1px solid var(--secondary-color);
+}
+.card-title {
+    color: var(--primary-color) !important;
+}
+.card-text {
+    color: var(--secondary-color) !important;
 }
 /*Main*/
