@@ -24,3 +24,9 @@
         -webkit-text-fill-color: transparent;
     }
 /*Header*/
+/*Main*/
+#barra {
+    width: 45%;
+    border: 1px solid var(--secondary-color);
+}
+/*Main*/
